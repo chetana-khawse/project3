@@ -1,25 +1,15 @@
 import React, { useState } from 'react'
 
 function Register() {
-    // const [countries,setCountries]=useState([]);
-    // const [state,setState]=useState([]);
-    // const [cities,setCities]=useState([]);
-    // const country=[{
-    //                name:"india",
-    //                states:[{
-    //                 name:"up",
-    //                 city:["a","b"]
-    //                  }]
-    //               },
-    //               {
-    //                 name:"pakistan",
-    //                 states:[{
-    //                  name:"kabul",
-    //                  city:["c","d"]
-    //                   }]
-    //                }]
+    
+    const [selectedcity,setSelectedcity]=useState([]);
+    const states=["maharastra","gujrat","kerala"]   ;
+    const cities={ "maharastra":["pune","nagpur","mumbai"],
+                   "gujrat":["ahmedabad","surat","valsad"],
+                   "kerala":["cochin","tiruannatpuram"]}       
+      
 
-                   const [data,setData] = useState({
+               const [data,setData] = useState({
                     username:"",
                     email:"",
                     password:"",
@@ -63,22 +53,23 @@ function Register() {
 
 
 
-<select>
-    <option></option>
-    <option></option>
-    <option></option>
-    <option></option>
+<select onChange={(e)=>setSelectedcity(e.target.value) } name="states">
+  { 
+     
+   states.map((item)=>{
+  return<option>{item}</option>
+
+   }
+   )
+}  
 
   </select>
-
-
-
-  <select>
-    <option></option>
-    <option></option>
-    <option></option>
-    <option></option>
-
+<select >
+  { 
+     cities[selectedcity].map(item=>{
+   return <option>{item}</option>
+      } ) 
+  }
   </select> <br/><br/>
 
   <label>Courses :</label>  <br/><br/>

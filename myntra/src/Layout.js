@@ -5,8 +5,7 @@ function Layout() {
   return (
     <div align ='center'> 
     <h2>  <Link to="/">Home</Link>  <br/> <Link to="/About">about</Link> <br/>    <Link to="/Register">Register</Link><br/>       <Link to="/Blogs">Blogs</Link>
-    </h2>
-     <Outlet />
+    </h2> <Outlet />
   </div>
   )
 }
